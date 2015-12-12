@@ -1,0 +1,78 @@
+<html>
+  	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Edit Ingredient</title>
+	    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	    <link rel=stylesheet type=text/css	href="{{ url_for('static', filename='css/style.css') }}">
+	    <link rel=stylesheet type=text/css	href="{{ url_for('static', filename='css/bootstrap.css') }}">
+	    <link rel=stylesheet type=text/css	href="{{ url_for('static', filename='css/animate.css') }}">
+	    <link rel=stylesheet type=text/css	href="{{ url_for('static', filename='css/font-awesome.css') }}">
+  	</head>
+
+	<body>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/">Meal Cost</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href='{{ url_for('mealList')}}'>All Meals</a></li>
+	        <li><a href="/login">Sign In</a></li>
+	        <li><a href="/gdisconnect">Sign Out</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="page-header">
+  		<h1>Edit {{ i.name }}</h1>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<form class="horizontal" action = "{{ url_for('editMealIngredient', ingredient_id = i.id, meal_id = i.meal_id )}}" method = 'POST'>
+				<div class="form-group">
+    				<label for="name" class="col-sm-1 control-label">Name</label>
+    				<div class="col-sm-11">
+      					<input type="text" class="form-control" id="name" name='name' placeholder='{{ i.name }}'>
+   					 </div>
+  				</div>
+  				<div class="form-group">
+    				<label for="amount" class="col-sm-1 control-label">Amount</label>
+    				<div class="col-sm-11">
+      					<input type="text" class="form-control" id="amount" name='amount' placeholder='{{ i.amount }}'>
+   					 </div>
+  				</div>
+  				<div class="form-group">
+    				<label for="price" class="col-sm-1 control-label">Price</label>
+    				<div class="col-sm-11">
+      					<input type="text" class="form-control" id="price" name='price' placeholder='{{ i.price }}'>
+   					 </div>
+  				</div>
+  				<div class="form-group">
+  					<div class="col-sm-offset-1 col-sm-11">
+	  					<button type="submit" class="btn btn-success">Submit</button>
+	  					<a class="btn btn-warning" href='{{ url_for('mealDetails', meal_id = i.meal_id )}}' role="button" method='POST'>Cancel</a>
+	  				</div>	
+  				</div>
+			</form>
+			<form action='{{ url_for('deleteMealIngredient', ingredient_id = i.id, meal_id = i.meal_id)}}' method='POST'>
+				<div class="form-group">
+		  			<div class="col-sm-offset-1 col-sm-11">
+		  				<button type="submit" class="btn btn-danger">Delete</button>
+		  			</div>
+		  		</div>
+	  		</form>
+		</div>
+	</div>
+	</body>
+</html>

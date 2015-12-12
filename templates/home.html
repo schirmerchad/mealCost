@@ -1,0 +1,47 @@
+<html>
+  	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>All Meals</title>
+	    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	    <link rel=stylesheet type=text/css	href="{{ url_for('static', filename='css/style.css') }}">
+	    <link rel=stylesheet type=text/css	href="{{ url_for('static', filename='css/bootstrap.css') }}">
+	    <link rel=stylesheet type=text/css	href="{{ url_for('static', filename='css/animate.css') }}">
+	    <link rel=stylesheet type=text/css	href="{{ url_for('static', filename='css/font-awesome.css') }}">
+  	</head>
+
+	<body>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/">Meal Cost</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href='{{ url_for('mealList')}}'>All Meals</a></li>
+	        <li><a href="/login">Sign In</a></li>
+	        <li><a href="/gdisconnect">Sign Out</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="jumbotron">
+				<h1>Why hello</h1>
+				<p>This app will one day calculate the cost of meals created by users</p>
+				<p><a class="btn btn-primary btn-lg" href="/meals/" role="button">See some meals!</a></p>
+			</div>
+		</div>
+	</div>
+
+	</body>
+</html>
