@@ -1,6 +1,5 @@
-# fullstack-project3
+# MealCost
 
-Project #3 for the Udacity Full Stack Nanodegree
 This project uses Python and SQLite to develop a RESTful web application. The Python framework Flask is used as well as OAuth authentication.
 
 <h1>Description</h1>
